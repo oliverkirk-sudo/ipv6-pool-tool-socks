@@ -4,6 +4,7 @@
 
 我使用的是[tunnelbroker](https://www.tunnelbroker.net/)提供的ipv6地址池，/48的地址池几辈子用不完
 
+[教程](https://itechfans.com/2023/12/usingtunnelbrokertoimplementipv6proxypoolfreedom/)
 ## 使用
 
 ```shell
