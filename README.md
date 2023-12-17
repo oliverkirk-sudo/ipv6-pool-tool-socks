@@ -21,7 +21,7 @@ export SOCKS5_PASSWORD=password
 
 设置代理
 ```shell
-socks5://127.0.0.1:1080
+socks5://username:password@127.0.0.1:1080
 ```
 
 本项目仅用于学习交流，请勿用于违法用途
