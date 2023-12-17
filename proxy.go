@@ -48,6 +48,7 @@ func generateRandomIPv6(prefix string) (net.IP, error) {
 	return ip, nil
 }
 func main() {
+	flag.Parse()
 	// 监听本地端口
 	listener, err := net.Listen("tcp", listenAddr)
 	if err != nil {
