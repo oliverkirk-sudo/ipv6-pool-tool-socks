@@ -24,4 +24,29 @@ export SOCKS5_PASSWORD=password
 socks5://username:password@127.0.0.1:1080
 ```
 
+## 注册为系统服务
+在/etc/systemd/system目录中创建proxytool.service，并填入以下内容
+
+```shell
+[Unit]
+Description=IPV6 Proxy Pool Tool
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/proxytool -i xxxx:xxxx:xxxx::/48 -l 127.0.0.1:1080
+Restart=on-failure
+Environment="SOCKS5_USERNAME=username" "SOCKS5_PASSWORD=password"
+[Install]
+WantedBy=multi-user.target
+
+```
+`/usr/bin/proxytool`替换为你的proxytool地址
+保存后执行
+```shell
+sudo systemctl daemon-reload
+sudo systemctl start proxytool
+sudo systemctl enable proxytool #开机自启
+sudo systemctl status proxytool #查看状态
+```
+
 本项目仅用于学习交流，请勿用于违法用途
